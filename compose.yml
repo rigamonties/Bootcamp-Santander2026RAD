@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: carteira
+      POSTGRES_PASSWORD: carteira
+      POSTGRES_DB: carteira_investimentos
+    ports:
+      - "5432:5432"
+    volumes:
+      - carteira_pgdata:/var/lib/postgresql/data
+
+volumes:
+  carteira_pgdata:
